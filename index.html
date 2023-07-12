@@ -63,7 +63,7 @@
                     <button onclick="logout()" class="btn btn-outline-primary" type="submit">Logout</button>
                   </div>
 
-                  <span class="d-flex justify-content-center mt-2" onclick="navigateToCreateAccount()">Create Account?</span>
+                  <span class="d-flex justify-content-center mt-2 text-primary" id="c-Account" onclick="navigateToCreateAccount()">Create Account?</span>
               </div>  
         </div>
       </div>
@@ -109,6 +109,9 @@
   </main>
   
   <script>
+    // create a new account
+    const cAccount = document.getElementById('c-Account')
+
     const logout = () => {
       // show login form
       const loginForm = document.getElementById('login-form');
@@ -117,6 +120,7 @@
       // hide logged in user div
       const loggedInDiv = document.getElementById('logged-in');
       loggedInDiv.classList.add('d-none');
+      cAccount.classList.remove('d-none');
 
       sessionStorage.removeItem('username');
     }
@@ -129,6 +133,7 @@
       // show logged in user div
       const loggedInDiv = document.getElementById('logged-in');
       loggedInDiv.classList.remove('d-none');
+      cAccount.classList.add('d-none');
 
       // fill in username
       const loggedInUser = document.getElementById('logged-in-user');
