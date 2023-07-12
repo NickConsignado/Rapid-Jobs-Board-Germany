@@ -1,11 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rapid Jobs Board</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Rapid Jobs Board</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+  <link rel="icon" type="image/x-icon" href="clear-logo.png">
+  <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
-    
+
+  <header>
+
+    <nav class="navbar navbar-expand-lg bg-light">
+
+      <div class="container-fluid">
+        <p class="navbar-brand"><img src="clear-logo.png" alt="Logo" style="width: 200px; height: 80px;"></p>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse " id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <span  class="nav-link active" aria-current="page" onclick="navigateToHome()">Home</span>
+            </li>
+            <li class="nav-item">
+              <span class="nav-link" onclick="navigateToAbout()">About</span>
+            </li>
+            <li class="nav-item">
+              <span class="nav-link" onclick="navigateToJobs()">Jobs</span>
+            </li>
+            <li class="nav-item">
+              <span class="nav-link" onclick="navigateToCompanies()">Companies</span>
+            </li>
+            <li class="nav-item">
+              <span class="nav-link" onclick="navigateToTestimonial()">Testimonial</span>
+            </li>
+            <li class="nav-item">
+              <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-primary" type="submit">Search</button>
+              </form>
+            </li>
+          </ul>
+              <div class="container me-lg-0 col-lg-3">                  
+                <div id="login-form" class="d-flex ">
+                    <h5>Login:</h5>
+                    <input class="form-control me-2 ms-2" type="text" name="username" id="username" placeholder="Username" aria-label="Username" />
+                    <input class="form-control me-2" type="password" name="username" id="username" placeholder="Password" aria-label="Password" />
+                    <button onclick="loginUser()" class="btn btn-outline-primary" type="submit">Signup</button>
+                  </div>
+
+                  <div id="logged-in" class="d-none">
+                    <h3>User:<span id="logged-in-user"class="me-5"></span></h3>
+                    <button onclick="logout()" class="btn btn-outline-primary" type="submit">Logout</button>
+                  </div>
+
+                  <span class="d-flex justify-content-center mt-2" onclick="navigateToCreateAccount()">Create Account?</span>
+              </div>  
+        </div>
+      </div>
+      
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- Home Page-->
+    <div id="home" class="container-fluid w-75 card mt-5">
+      <h1>Home</h1>
+    </div>
+
+
+    <!-- About Page -->
+    <div id="about" class="d-none container-fluid w-75 card mt-5">
+      <h1>About</h1>
+    </div>
+
+
+    <!--Jobs Page-->
+    <div id="jobs" class="d-none container-fluid w-75 card mt-5">
+      <h1>Jobs</h1>
+    </div>
+
+
+    <!-- Companies Page-->
+    <div id="companies" class="d-none container-fluid w-75 card mt-5">
+      <h1>Companies</h1>
+    </div>
+
+    <!-- Testimonial Page-->
+    <div id="testimonial" class="d-none container-fluid w-75 card mt-5">
+      <h1>Testimonial</h1>
+    </div>
+
+    <!-- Create an Account Page-->
+    <div id="createAccount" class="d-none container-fluid w-75 card mt-5">
+      <h1>Create an Account</h1>
+    </div>
+
+  </main>
+  
+  <script>
+    const logout = () => {
+      // show login form
+      const loginForm = document.getElementById('login-form');
+      loginForm.classList.remove('d-none');
+
+      // hide logged in user div
+      const loggedInDiv = document.getElementById('logged-in');
+      loggedInDiv.classList.add('d-none');
+
+      sessionStorage.removeItem('username');
+    }
+
+    const renderLoggedInUser = (username) => {
+      // hide login form
+      const loginForm = document.getElementById('login-form');
+      loginForm.classList.add('d-none');
+
+      // show logged in user div
+      const loggedInDiv = document.getElementById('logged-in');
+      loggedInDiv.classList.remove('d-none');
+
+      // fill in username
+      const loggedInUser = document.getElementById('logged-in-user');
+      loggedInUser.textContent = username;
+    }
+
+    const loginUser = () => {
+      const username = document.getElementById('username').value;
+
+      sessionStorage.setItem('username', username);
+
+      renderLoggedInUser(username);
+    }
+
+    const showSelectedPage = (selectedPage) => {
+
+      pages.forEach(page => {
+        const pageDiv = document.getElementById(page);
+
+        if (page === selectedPage) {
+          pageDiv.classList.remove('d-none');
+        } else {
+          pageDiv.classList.add('d-none');
+        }
+      });
+    }
+
+    const navigateToHome = () => {
+      history.pushState({ id: 'home' }, 'Home', './index.html');
+      showSelectedPage('home');
+    }
+
+    const navigateToAbout = () => {
+      history.pushState({ id: 'about' }, 'About', './index.html#about');
+      showSelectedPage('about');
+    }
+
+    const navigateToJobs = () => {
+      history.pushState({ id: 'jobs' }, 'Jobs', './index.html#jobs');
+      showSelectedPage('jobs');
+    }
+
+    const navigateToCompanies = () => {
+      history.pushState({ id: 'companies' }, 'Companies', './index.html#companies');
+      showSelectedPage('companies');
+    }
+
+    const navigateToTestimonial = () => {
+      history.pushState({ id: 'testimonial' }, 'Testimonial', './index.html#testimonial');
+      showSelectedPage('testimonial');
+    }
+
+    const navigateToCreateAccount = () => {
+      history.pushState({ id: 'createAccount' }, 'CreateAccount', './index.html#createAccount');
+      showSelectedPage('createAccount');
+    }
+
+    navigateToCreateAccount
+
+    window.addEventListener('popstate', (e) => {
+      showSelectedPage(e.state.id);
+    });
+
+    const pages = ['home', 'about', 'jobs', 'companies', 'testimonial','createAccount'];
+
+    history.replaceState({ id: 'home' }, 'Home', './index.html');
+
+    const username = sessionStorage.getItem('username');
+    if (username) {
+      renderLoggedInUser(username);
+    }
+
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+    crossorigin="anonymous"></script>
 </body>
+
 </html>
