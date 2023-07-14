@@ -55,21 +55,20 @@
                 <div class="container me-lg-0 col-lg-3">                  
                   <div id="login-form" class="d-flex ">
                       <h5>Login:</h5>
-                      <input class="form-control me-2 ms-2" type="text" name="username" id="username" placeholder="Username" aria-label="Username" />
-                      <input class="form-control me-2" type="password" name="password" id="password" placeholder="Password" aria-label="Password" />
+                      <input class="form-control me-2 ms-2" type="text" name="username" id="username" placeholder="Username" aria-label="Username"/>
+                      <input class="form-control me-2" type="password" name="password" id="password" placeholder="Password" aria-label="Password"/>
                       <button onclick="loginUser()" class="btn btn-outline-primary" type="submit">Signup</button>
                   </div>
 
                   <div id="logged-in" class="d-none">
-                      <h3>User:<span id="logged-in-user"class="me-5"></span></h3>
+                      <h3>User: &nbsp;<span id="logged-in-user"class="me-5"></span></h3>
                       <button onclick="logout()" class="btn btn-outline-primary ms-5" type="submit">Logout</button>
                   </div>
 
                     <span class="d-flex justify-content-center mt-2 text-primary" id="c-Account" onclick="navigateToCreateAccount()">Create Account?</span>
                 </div>  
           </div>
-        </div>
-        
+        </div>  
       </nav>
     </header>
 
@@ -107,7 +106,7 @@
               <p>They also started marketing their website through social media, blogs, podcasts, and events. They created a catchy slogan: <b> “Rapid Jobs: The Job Website That Works For You”</b>. They also created a logo: a blue circle with a white J inside. </p>
               <p>They gradually gained more users and more traction. They also attracted the attention of some investors and media outlets. They were featured in some magazines and newspapers as one of the most promising startups in the country.</p>
               <p>They were happy with their progress, but they also faced some challenges and competition. They had to deal with some technical difficulties, legal issues, and security threats. They also had to compete with some other job websites that tried to copy or undermine them.</p>
-              <p>They didn’t give up or give in. They kept working hard and smart. They kept innovating and improving. They kept listening to their users and meeting their needs. </p>
+              <p>They didn't give up or give in. They kept working hard and smart. They kept innovating and improving. They kept listening to their users and meeting their needs. </p>
               <p>They eventually achieved their goal: they became one of the most popular and successful job websites in the world. They helped millions of people find their dream jobs, and millions of companies find their ideal employees. </p>
               <p>They also achieved their dream: they became rich and famous entrepreneurs. They were admired and respected by their peers and their fans. They were invited to speak at conferences and events. They were awarded with prizes and honors. </p>
               <p>They were proud of themselves and their team. They were grateful for their supporters and their customers. They were happy with their work and their life.</p>
@@ -145,151 +144,83 @@
       </div>
 
       <!-- Testimonial Page-->
-      <div id="testimonial" class="d-none container-fluid w-75 card mt-5">
+      <div id="testimonial" class="d-none container-fluid w-75 mt-5">
          <h1>Testimonial</h1>
+          <div class="d-flex column justify-content-evenly mt-5">
+          <img src="./images/SirJay.png" alt="Sir Jay " style="width: 400px; height: 350px; " class="card ">
+            <div class="w-25 text-center">
+              <h1 class=" mt-3">"Jay"</h1>
+              <p>From the very beginning, Jay showcased a deep understanding of our 
+              requirements and came up with innovative solutions to meet our goals. 
+              Their coding skills and attention to detail were impeccable, resulting 
+              in a website that is not only visually appealing but also highly functional. 
+              They consistently delivered high-quality code, ensuring that our website was both efficient and scalable.
+              </p>
+            </div>
+          </div>
+          
+          <div class="d-flex column justify-content-evenly mt-5">
+            <div class="w-25 text-center">
+              <h1 class=" mt-3">"Dom"</h1>
+              <p>From the very beginning, Jay showcased a deep understanding of our 
+              requirements and came up with innovative solutions to meet our goals. 
+              Their coding skills and attention to detail were impeccable, resulting 
+              in a website that is not only visually appealing but also highly functional. 
+              They consistently delivered high-quality code, ensuring that our website was both efficient and scalable.
+              </p>
+            </div>
+          <img src="./images/SirDom.png" alt="Sir Dom" style="width: 400px; height: 350px;" class="card">
+          </div>
+
+      
       </div>
 
       <!-- Create an Account Page-->
-      <div id="createAccount" class="d-none container-fluid w-75 card mt-5">
-         <h1>Create an Account</h1>
-      </div>
-
-    </main>
-    
-    <script>
-      // create a new account
-      const cAccount = document.getElementById('c-Account')
-      
-      const logout = () => {
-        
-        // show login form
-        const loginForm = document.getElementById('login-form');
-        loginForm.classList.remove('d-none');
-
-        // hide logged in user div
-        const loggedInDiv = document.getElementById('logged-in');
-        loggedInDiv.classList.add('d-none');
-        cAccount.classList.remove('d-none');
-      
-        sessionStorage.removeItem('username');
-      }
-
-      const renderLoggedInUser = (username) => {
-        // hide login form
-        const loginForm = document.getElementById('login-form');
-        loginForm.classList.add('d-none');
-
-        // show logged in user div
-        const loggedInDiv = document.getElementById('logged-in',);
-        loggedInDiv.classList.remove('d-none');
-        cAccount.classList.add('d-none');
-
-        // fill in username
-        const loggedInUser = document.getElementById('logged-in-user');
-        loggedInUser.textContent = username;
-      }
-
-      const loginUser = () => {
-        const username = document.getElementById('username').value;
-
-        sessionStorage.setItem('username', username);
-
-        renderLoggedInUser(username);
-      }
-
-      const showSelectedPage = (selectedPage) => {
-
-        pages.forEach(page => {
-          const pageDiv = document.getElementById(page);
-
-          if (page === selectedPage) {
-            pageDiv.classList.remove('d-none');
-          } else {
-            pageDiv.classList.add('d-none');
-          }
-        });
-      }
-
-      const navigateToHome = () => {
-        history.pushState({ id: 'home' }, 'Home', './index.html');
-        showSelectedPage('home');
-      }
-
-      const navigateToAbout = () => {
-        history.pushState({ id: 'about' }, 'About', './index.html#about');
-        showSelectedPage('about');
-      }
-
-      const navigateToJobs = () => {
-        history.pushState({ id: 'jobs' }, 'Jobs', './index.html#jobs');
-        showSelectedPage('jobs');
-      }
-
-      const navigateToCompanies = () => {
-        history.pushState({ id: 'companies' }, 'Companies', './index.html#companies');
-        showSelectedPage('companies');
-      }
-
-      const navigateToTestimonial = () => {
-        history.pushState({ id: 'testimonial' }, 'Testimonial', './index.html#testimonial');
-        showSelectedPage('testimonial');
-      }
-
-      const navigateToCreateAccount = () => {
-        history.pushState({ id: 'createAccount' }, 'CreateAccount', './index.html#createAccount');
-        showSelectedPage('createAccount');
-      }
-
-      navigateToCreateAccount
-
-      window.addEventListener('popstate', (e) => {
-        showSelectedPage(e.state.id);
-      });
-
-      const pages = ['home', 'about', 'jobs', 'companies', 'testimonial','createAccount'];
-
-      history.replaceState({ id: 'home' }, 'Home', './index.html');
-
-      const username = sessionStorage.getItem('username');
-      if (username) {
-        renderLoggedInUser(username);
-      }
-
-      fetch('https://www.arbeitnow.com/api/job-board-api')
-    .then(response => response.json())
-    .then(data => {
-      // Display the API response on the console
-      const jobs = data.data;
-      console.log(data)
-      const jobListDiv = document.getElementById('job-list');
-      
-      jobs.forEach(job => {
-        const cardDiv = document.createElement('div');
-        cardDiv.innerHTML = `
-          <div class="container border d-flex row w-lg-50 mb-5 m-auto">
-            <div class="ms-2 col-lg-4 my-2">
-            <dd>${job.title},</dd>
-            <dd><i class="fa-solid fa-building me-2" style="color: #3A43C9;"></i>${job.company_name},</dd>
-            <dd><i class="fa-solid fa-earth-americas me-2" style="color: #3A43C9;"></i>${job.location}</dd>
+        <div id="createAccount" class="d-none container card col-lg-4 mt-5">
+         <h1 class="mb-5 text-center text-primary">Create an Account</h1>
+          <form action="#" id="">
+            <div class="mb-3 row text-danger">
+              <label for="inputUserName" class="col-sm-4 col-form-label text-primary">
+              <h4>Username:</h4></label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control" id="inputUserName" required>
+              </div>
+            <label for="inputEmail" class="col-sm-4 col-form-label text-primary"><h4>Email:</h4></label>
+            <div class="col-sm-8">
+              <input type="email" class="form-control" id="inputEmail" required>
             </div>
-            <div class="ms-4 col-lg-6 my-2">
-              <dd>${job.tags}</dd>
+            <label for="inputEmail" class="col-sm-4 col-form-label"><h6>Confirm Email:</h6></label>
+            <div class="col-sm-8 mb-3">
+              <input type="email" class="form-control" id="inputEmail" required>
             </div>
-            <div class="col-lg-1  align-self-center">
-              <button class="btn btn-primary">Apply</Button
+
+            <!--PassWord-->
+            <label for="inputPassword" class="col-sm-4 col-form-label text-primary"><h4>Password:</h4></label>
+            <div class="col-sm-8">
+              <input type="password" class="form-control" id="inputPassword" required>
+            </div>
+            <label for="inputPassword" class="col-sm-4 col-form-label"><h6>Confirm Password:</h6></label>
+            <div class="col-sm-8 mb-3">
+              <input type="password" class="form-control" id="inputPassword" required>
+            </div>
+
+            <div class="d-flex justify-content-center">
+            <button type="submit" class="btn btn-outline-primary w-25 mb-3 text-center ">Register</button>
             </div>
           </div>
-          `;
-        
-        jobListDiv.appendChild(cardDiv);
-      });
-    })
-      .catch(error => {
-      console.error('Error:', error);
-      });
-    
-    </script>
+          </form>
+          
+        </div>
+         
 
+      </div>
+
+      <footer>
+        <h1></h1> <br><br><br><br><br><br><br><br><br><br><br>
+        </footer>
+    </main>
+    
+    <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
       crossorigin="anonymous"></script>
