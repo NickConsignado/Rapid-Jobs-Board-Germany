@@ -66,6 +66,11 @@
    showSelectedPage('jobs');
  }
 
+ const navigateToApplyJob = () => {
+  history.pushState({ id: 'applyJob' }, 'ApplyJob', './index.html#applyJob');
+  showSelectedPage('applyJob');
+}
+
  const navigateToCompanies = () => {
    history.pushState({ id: 'companies' }, 'Companies', './index.html#companies');
    showSelectedPage('companies');
@@ -87,7 +92,7 @@
    showSelectedPage(e.state.id);
  });
 
- const pages = ['home', 'about', 'jobs', 'companies', 'testimonial','createAccount'];
+ const pages = ['home', 'about', 'jobs','applyJob', 'companies', 'testimonial','createAccount'];
 
  history.replaceState({ id: 'home' }, 'Home', './index.html');
 
@@ -101,9 +106,11 @@
 .then(data => {
  // Display the API response on the console
  const jobs = data.data;
+
  console.log(data)
  const jobListDiv = document.getElementById('job-list');
- 
+ const applyJobDiv = document.getElementById('job-description');
+
  jobs.forEach(job => {
    const cardDiv = document.createElement('div');
    cardDiv.innerHTML = `
@@ -117,11 +124,28 @@
          <dd>${job.tags}</dd>
        </div>
        <div class="col-lg-1  align-self-center">
-         <button class="btn btn-primary">Apply</Button
+         <span onclick="navigateToApplyJob()" class="btn btn-primary">Apply</span>
        </div>
      </div>
      `;
+
+    //  Job Description apply
+     const jobDes = document.createElement('div');
+  //    jobDes.innerHTML = `<div class="container border d-flex row w-lg-50 mb-5 m-auto">
+  //    <div class="ms-2 col-lg-4 my-2">
+  //    <dd>${job.title},</dd>
+  //    <dd><i class="fa-solid fa-building me-2" style="color: #3A43C9;"></i>${job.company_name},</dd>
+  //    <dd><i class="fa-solid fa-earth-americas me-2" style="color: #3A43C9;"></i>${job.location}</dd>
+  //    </div>
+  //    <div class="ms-4 col-lg-6 my-2">
+  //      <dd>${job.tags}</dd>
+  //    </div>
+  //    <div class="col-lg-1  align-self-center">
+  //      <span onclick="navigateToApplyJob()" class="btn btn-primary">Apply</span>
+  //    </div>
+  //  </div>`;
    
+  //  applyJobDiv.appendChild(jobDes);
    jobListDiv.appendChild(cardDiv);
  });
 })
