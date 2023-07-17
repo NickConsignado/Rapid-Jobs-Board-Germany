@@ -1,240 +1,255 @@
-  <!DOCTYPE html>
-  <html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Rapid Jobs Board</title>
+  <title>Rapid Jobs Board</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
-    <link rel="icon" type="image/x-icon" href="./images/final-logo.png">
-    <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href="./images/final-logo.png">
+  <link rel="stylesheet" href="style.css">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
-  </head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
+</head>
 
-  <body>
+<body>
 
-    <header>
+  <header>
 
-      <nav class="navbar navbar-expand-lg bg-light">
+    <nav class="navbar navbar-expand-lg bg-light">
 
-        <div class="container-fluid">
-          <p class="navbar-brand"><img src="./images/final-logo.png" alt="Logo" style="width: 200px; height: 80px;"></p>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="nav nav-tabs collapse navbar-collapse " id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <span  class="nav-link" aria-current="page" onclick="navigateToHome()">Home</span>
-              </li>
-              <li class="nav-item">
-                <span class="nav-link" onclick="navigateToAbout()">About</span>
-              </li>
-              <li class="nav-item">
-                <span class="nav-link" onclick="navigateToJobs()">Jobs</span>
-              </li>
-              <li class="nav-item">
-                <span class="nav-link" onclick="navigateToTestimonial()">Testimonial</span>
-              </li>
-              <li class="nav-item">
-                <form class="d-flex" role="search">
-                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                  <button class="btn btn-outline-primary" type="submit">Search</button>
-                </form>
-              </li>
-            </ul>
-                <div class="container me-lg-0 col-lg-3">                  
-                  <div id="login-form" class="d-flex ">
-                      <h5>Login:</h5>
-                      <input class="form-control me-2 ms-2" type="text" name="username" id="username" placeholder="Username" aria-label="Username"/>
-                      <input class="form-control me-2" type="password" name="password" id="password" placeholder="Password" aria-label="Password"/>
-                      <button onclick="loginUser()" class="btn btn-outline-primary" type="submit">Signup</button>
-                  </div>
+      <div class="container-fluid">
+        <p class="navbar-brand"><img src="./images/final-logo.png" alt="Logo" style="width: 200px; height: 80px;"></p>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="nav nav-tabs collapse navbar-collapse " id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <span  class="nav-link" aria-current="page" onclick="navigateToHome()">Home</span>
+            </li>
+            <li class="nav-item">
+              <span class="nav-link" onclick="navigateToAbout()">About</span>
+            </li>
+            <li class="nav-item">
+              <span class="nav-link" onclick="navigateToJobs()">Jobs</span>
+            </li>
+            <li class="nav-item">
+              <span class="nav-link" onclick="navigateToTestimonial()">Testimonial</span>
+            </li>
+            <li class="nav-item">
+              <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-primary" type="submit">Search</button>
+              </form>
+            </li>
+          </ul>
+              <div class="container me-lg-0 col-lg-3">                  
+                <div id="login-form" class="d-flex ">
+                    <h5>Login:</h5>
+                    <input class="form-control me-2 ms-2" type="text" name="username" id="username" placeholder="Username" aria-label="Username"/>
+                    <input class="form-control me-2" type="password" name="password" id="password" placeholder="Password" aria-label="Password"/>
+                    <button onclick="loginUser()" class="btn btn-outline-primary" type="submit">Signup</button>
+                </div>
 
-                  <div id="logged-in" class="d-none">
-                      <h3>User: &nbsp;<span id="logged-in-user"class="me-5"></span></h3>
-                      <button onclick="logout()" class="btn btn-outline-primary ms-5" type="submit">Logout</button>
-                  </div>
+                <div id="logged-in" class="d-none">
+                    <h3>User: &nbsp;<span id="logged-in-user"class="me-5"></span></h3>
+                    <button onclick="logout()" class="btn btn-outline-primary ms-5" type="submit">Logout</button>
+                </div>
 
-                    <span class="d-flex justify-content-center mt-2 text-primary" id="c-Account" onclick="navigateToCreateAccount()">Create Account?</span>
-                </div>  
-          </div>
-        </div>  
-      </nav>
-    </header>
+                  <span class="d-flex justify-content-center mt-2 text-primary" id="c-Account" onclick="navigateToCreateAccount()">Create Account?</span>
+              </div>  
+        </div>
+      </div>  
+    </nav>
+  </header>
 
-    <main>
+  <main>
 
-      <!-- Home Page-->
-      <div id="home" class="mt-5">
-        <h1>Home</h1>
-        <div class="container d-flex row m-auto">
-        <div class="col-lg-6">
-        <p class="pt-5 mt-5"> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate aspernatur magni iste enim totam voluptatem ipsum. Magnam impedit vel voluptates non, totam adipisci quibusdam quas sit nulla dolore, consequatur error.</p>
-        <br><br>
-        <button>View Careers</button>
+    <!-- Home Page-->
+    <div id="home" class="mt-5">
+      <img src="./images/applicants.jpg" alt="Applicants" style="width: 100%; height: 20vw;">
+      <div class="container d-flex row m-auto mt-5">
+      <div class="col-lg-6">
+        <p class="text-center fs-3 mt-5">Welcome to<b>"Rapid Jobs Board Germany"</b> - Your Gateway to a World of Opportunities!</p>
+      <p class="pt-2 mt-5 fs-5"> 
+        In today's competitive job market, finding the perfect career path can be a daunting task. That's why we're here to simplify the process and connect talented individuals like you with exceptional job opportunities.
+      </p>
+      <div class="d-flex justify-content-center">
+      <button onclick="navigateToJobs()" class="btn btn-outline-primary mt-3" type="submit">View Careers</button>
+      </div>
+    </div>
+      <div class="col-lg-6">
+        <img src="./images/landingPagePhoto.jpg" alt="Photo" class="card mt-5" style="width:100%;" >
+      </div>
       
-      </div>
-        <div class="col-lg-6">
-          <img src="./images/landingPagePhoto.jpg" alt="Photo" class="card" style="width:100%;" >
-        </div>
-        </div>
-          <br><br><br><br><br><br><br><br>
-        <img src="./images/companylogo.jpg" alt="CompanyLogo" style="width: 100%; height: 40vw;">
-        <br><br><br><br><br>
-      </div>
-
-
-      <!-- About Page -->
-      <div id="about" class="d-none container-fluid w-75 card mt-5 d-flex w-sm-50 mb-5 justify-content-center">
-         <h2 class="text-primary">Our Story</h2>
-         <br>
-            <h6>
-              <p><b>'Dom' </b>and <b>'Jay'</b> were college friends who shared a passion for technology and entrepreneurship. They both studied computer science and had some experience in web development and design. They also had a common problem: they couldn’t find a good job after graduation.</p>
-
-              <p>They had applied to dozens of companies, but they either got rejected or ignored. They felt like they had the skills and the talent, but they didn’t have the connections or the opportunities. They also felt like the existing job websites were not helpful or user-friendly. They were cluttered, outdated, and impersonal.</p>
-              
-              <p>They decided to create their own job website, one that would be different from the rest. One that would be simple, modern, and personalized. One that would help both job seekers and employers find their perfect match.</p>
-              
-              <p>They called it Jobify, and they started working on it in their spare time. They used their savings and some crowdfunding to fund their project. They also recruited some of their friends and classmates to join their team.</p>
-              
-              <p>They spent months developing and testing their website. They wanted to make sure it was fast, secure, and reliable. They also wanted to make sure it was easy to use and attractive to look at.</p>
-              
-              <p>They focused on three main features that they thought would make Rapid Jobs stand out:</p>
-              
-              <ul>
-                <li> A smart matching algorithm that would analyze the profiles of job seekers and employers and suggest the best matches based on skills, experience, preferences, and personality.</li>
-                <li>A social networking feature that would allow users to create and join communities based on their interests, goals, and backgrounds. Users could also follow, message, and endorse each other, as well as share tips, insights, and opportunities.</li>
-                <li>A gamification feature that would reward users for completing tasks, achieving goals, and improving their profiles. Users could earn points, badges, and trophies, as well as unlock new features and benefits.</li> 
-              </ul>
-              <p>They launched Rapid Jobs in beta mode and invited some of their contacts in Germany to try it out. They received positive feedback and constructive criticism. They used the data and the suggestions to improve their website and fix any bugs or issues.</p>
-              <p>They also started marketing their website through social media, blogs, podcasts, and events. They created a catchy slogan: <b> “Rapid Jobs: The Job Website That Works For You”</b>. They also created a logo: a blue circle with a white J inside. </p>
-              <p>They gradually gained more users and more traction. They also attracted the attention of some investors and media outlets. They were featured in some magazines and newspapers as one of the most promising startups in the country.</p>
-              <p>They were happy with their progress, but they also faced some challenges and competition. They had to deal with some technical difficulties, legal issues, and security threats. They also had to compete with some other job websites that tried to copy or undermine them.</p>
-              <p>They didn't give up or give in. They kept working hard and smart. They kept innovating and improving. They kept listening to their users and meeting their needs. </p>
-              <p>They eventually achieved their goal: they became one of the most popular and successful job websites in the world. They helped millions of people find their dream jobs, and millions of companies find their ideal employees. </p>
-              <p>They also achieved their dream: they became rich and famous entrepreneurs. They were admired and respected by their peers and their fans. They were invited to speak at conferences and events. They were awarded with prizes and honors. </p>
-              <p>They were proud of themselves and their team. They were grateful for their supporters and their customers. They were happy with their work and their life.</p>
-              <p>They realized that Rapid Jobs was more than just a job website. It was a vision, a mission, a legacy. </p></h6>
-
-          <h2 class="text-primary">What We Do</h2>
-          <br>
-          <h6>
-             <p>We ease people's burdens by connecting employers who need help with workers who need jobs. We work hard to put trust into the outsourcing experience for everyone.</p>
-          </h6>
-
-          <h2 class="text-primary">Why We Do It</h2>
-          <br>
-          <h6>
-             <p>Because it changes people's lives.
-
-              <p>Because Filipino workers keep emailing us saying: <br>
-              <b>"Thank you for helping me get a job! I can now work from home and earn a good wage."</b></p>
-              
-              <p>Because entrepreneurs keep emailing us saying: <br>
-              <b>"I hired a Filipino worker and he's fantastic. I can't imagine life without him!"</b></p>
-          </h6>
-      </div>
-
-
-      <!--Jobs Page-->
-      <div id="jobs" class=" d-none container-fluid w-lg-75 mt-5">
-         <div id="job-list"></div>
-      </div>
-
-      <!--ApplyJob-->
-      <div id="applyJob" class="container card w-50 mt-5 d-none">
-        <div id="job-description">
-        
-        </div>
-     </div>
-      <!-- Testimonial Page-->
-      <div id="testimonial" class="d-none container-fluid w-75 mt-5 m-auto">
-         <h1>Testimonial</h1>
-          <div class="d-flex row mt-5">
-          <img src="./images/SirJay.png" alt="Sir Jay " style="width: 400px; height: 350px;">
-            <div class="col-lg-5 text-center">
-              <h1 class=" mt-3">"Jay"</h1>
-              <p>From the very beginning, Jay showcased a deep understanding of our 
-              requirements and came up with innovative solutions to meet our goals. 
-              Their coding skills and attention to detail were impeccable, resulting 
-              in a website that is not only visually appealing but also highly functional. 
-              They consistently delivered high-quality code, ensuring that our website was both efficient and scalable.
-              </p>
-            </div>
-          </div>
-          
-          <div class="justify-content-evenly mt-5">
-            <div class="w-lg-25 text-center">
-              <h1 class=" mt-3">"Dom"</h1>
-              <p>From the very beginning, Jay showcased a deep understanding of our 
-              requirements and came up with innovative solutions to meet our goals. 
-              Their coding skills and attention to detail were impeccable, resulting 
-              in a website that is not only visually appealing but also highly functional. 
-              They consistently delivered high-quality code, ensuring that our website was both efficient and scalable.
-              </p>
-            </div>
-          <img src="./images/SirDom.png" alt="Sir Dom" style="width: 400px; height: 350px;" class="card">
-          </div>
-
-      
-      </div>
-
-      <!-- Create an Account Page-->
-        <div id="createAccount" class="d-none container card col-lg-4 mt-5">
-         <h1 class="mb-5 text-center text-primary">Create an Account</h1>
-          <form action="#" id="">
-            <div class="mb-3 row text-danger">
-              <label for="inputUserName" class="col-sm-4 col-form-label text-primary">
-              <h4>Username:</h4></label>
-              <div class="col-sm-8">
-                <input type="text" class="form-control" id="inputUserName" required>
-              </div>
-            <label for="inputEmail" class="col-sm-4 col-form-label text-primary"><h4>Email:</h4></label>
-            <div class="col-sm-8">
-              <input type="email" class="form-control" id="inputEmail" required>
-            </div>
-            <label for="inputEmail" class="col-sm-4 col-form-label"><h6>Confirm Email:</h6></label>
-            <div class="col-sm-8 mb-3">
-              <input type="email" class="form-control" id="inputEmail" required>
-            </div>
-
-            <!--PassWord-->
-            <label for="inputPassword" class="col-sm-4 col-form-label text-primary"><h4>Password:</h4></label>
-            <div class="col-sm-8">
-              <input type="password" class="form-control" id="inputPassword" required>
-            </div>
-            <label for="inputPassword" class="col-sm-4 col-form-label"><h6>Confirm Password:</h6></label>
-            <div class="col-sm-8 mb-3">
-              <input type="password" class="form-control" id="inputPassword" required>
-            </div>
-
-            <div class="d-flex justify-content-center">
-            <button type="submit" class="btn btn-outline-primary w-25 mb-3 text-center ">Register</button>
-            </div>
-          </div>
-          </form>
-          
-        </div>
-         
-
-      </div>
-
-      <footer>
-        <h1></h1> <br><br><br><br><br><br><br><br><br><br><br>
-        </footer>
-    </main>
+      <p class="text-center fs-5 mt-5">
+      At <b>"Rapid Jobs Board Germany"</b>, we understand that every individual possesses unique skills, experiences, and aspirations. 
+      Whether you're a fresh graduate eager to embark on your professional journey, a seasoned professional seeking a new challenge, 
+      or someone looking to make a career transition, we have a diverse range of job listings to cater to your needs.
+      Our platform offers a user-friendly interface designed to streamline your job search experience. 
+    </p>    
+    <br><br><br><br><br><br><br><br>
+      <img src="./images/companylogo.jpg" alt="CompanyLogo" style="width: 100%; height: 40vw;" class="mt-5">
+    </div>
+    </div>
+      <br><br><br><br><br>
     
-    <script src="script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-      crossorigin="anonymous"></script>
-  </body>
 
-  </html>
+
+    <!-- About Page -->
+    <div id="about" class="d-none container-fluid w-75 card mt-5 d-flex w-sm-50 mb-5 justify-content-center">
+       <h2 class="text-primary">Our Story</h2>
+       <br>
+          <h6>
+            <p><b>'Dom' </b>and <b>'Jay'</b> were college friends who shared a passion for technology and entrepreneurship. They both studied computer science and had some experience in web development and design. They also had a common problem: they couldn’t find a good job after graduation.</p>
+
+            <p>They had applied to dozens of companies, but they either got rejected or ignored. They felt like they had the skills and the talent, but they didn’t have the connections or the opportunities. They also felt like the existing job websites were not helpful or user-friendly. They were cluttered, outdated, and impersonal.</p>
+            
+            <p>They decided to create their own job website, one that would be different from the rest. One that would be simple, modern, and personalized. One that would help both job seekers and employers find their perfect match.</p>
+            
+            <p>They called it Jobify, and they started working on it in their spare time. They used their savings and some crowdfunding to fund their project. They also recruited some of their friends and classmates to join their team.</p>
+            
+            <p>They spent months developing and testing their website. They wanted to make sure it was fast, secure, and reliable. They also wanted to make sure it was easy to use and attractive to look at.</p>
+            
+            <p>They focused on three main features that they thought would make Rapid Jobs stand out:</p>
+            
+            <ul>
+              <li> A smart matching algorithm that would analyze the profiles of job seekers and employers and suggest the best matches based on skills, experience, preferences, and personality.</li>
+              <li>A social networking feature that would allow users to create and join communities based on their interests, goals, and backgrounds. Users could also follow, message, and endorse each other, as well as share tips, insights, and opportunities.</li>
+              <li>A gamification feature that would reward users for completing tasks, achieving goals, and improving their profiles. Users could earn points, badges, and trophies, as well as unlock new features and benefits.</li> 
+            </ul>
+            <p>They launched Rapid Jobs in beta mode and invited some of their contacts in Germany to try it out. They received positive feedback and constructive criticism. They used the data and the suggestions to improve their website and fix any bugs or issues.</p>
+            <p>They also started marketing their website through social media, blogs, podcasts, and events. They created a catchy slogan: <b> “Rapid Jobs: The Job Website That Works For You”</b>. They also created a logo: a blue circle with a white J inside. </p>
+            <p>They gradually gained more users and more traction. They also attracted the attention of some investors and media outlets. They were featured in some magazines and newspapers as one of the most promising startups in the country.</p>
+            <p>They were happy with their progress, but they also faced some challenges and competition. They had to deal with some technical difficulties, legal issues, and security threats. They also had to compete with some other job websites that tried to copy or undermine them.</p>
+            <p>They didn't give up or give in. They kept working hard and smart. They kept innovating and improving. They kept listening to their users and meeting their needs. </p>
+            <p>They eventually achieved their goal: they became one of the most popular and successful job websites in the world. They helped millions of people find their dream jobs, and millions of companies find their ideal employees. </p>
+            <p>They also achieved their dream: they became rich and famous entrepreneurs. They were admired and respected by their peers and their fans. They were invited to speak at conferences and events. They were awarded with prizes and honors. </p>
+            <p>They were proud of themselves and their team. They were grateful for their supporters and their customers. They were happy with their work and their life.</p>
+            <p>They realized that Rapid Jobs was more than just a job website. It was a vision, a mission, a legacy. </p></h6>
+
+        <h2 class="text-primary">What We Do</h2>
+        <br>
+        <h6>
+           <p>We ease people's burdens by connecting employers who need help with workers who need jobs. We work hard to put trust into the outsourcing experience for everyone.</p>
+        </h6>
+
+        <h2 class="text-primary">Why We Do It</h2>
+        <br>
+        <h6>
+           <p>Because it changes people's lives.
+
+            <p>Because Filipino workers keep emailing us saying: <br>
+            <b>"Thank you for helping me get a job! I can now work from home and earn a good wage."</b></p>
+            
+            <p>Because entrepreneurs keep emailing us saying: <br>
+            <b>"I hired a Filipino worker and he's fantastic. I can't imagine life without him!"</b></p>
+        </h6>
+    </div>
+
+
+    <!--Jobs Page-->
+    <div id="jobs" class=" d-none container-fluid w-lg-75 mt-5">
+       <div id="job-list"></div>
+    </div>
+
+    <!--ApplyJob-->
+    <div id="applyJob" class="container card w-50 mt-5 d-none">
+      <div id="job-description">
+      
+      </div>
+   </div>
+    <!-- Testimonial Page-->
+    <div id="testimonial" class="d-none container-fluid w-75 mt-3 m-auto">
+       <h1>Testimonial</h1>
+        <div class="d-flex row mt-5">
+        <img src="./images/SirJay.png" alt="Sir Jay " style="width: 400px; height: 350px;">
+          <div class="col-lg-5 text-center">
+            <h1 class=" mt-3">"Jay"</h1>
+            <p>From the very beginning, Jay showcased a deep understanding of our 
+            requirements and came up with innovative solutions to meet our goals. 
+            Their coding skills and attention to detail were impeccable, resulting 
+            in a website that is not only visually appealing but also highly functional. 
+            They consistently delivered high-quality code, ensuring that our website was both efficient and scalable.
+            </p>
+          </div>
+        </div>
+        
+        <div class="justify-content-evenly my-5 d-flex row">
+          <img src="./images/SirDom.png" alt="Sir Dom" style="width: 400px; height: 350px;" class="d-sm-none">
+          <div class="col-lg-5 text-center">
+            <h1 class=" mt-3">"Dom"</h1>
+            <p>This job application website offers an unparalleled user experience that is both intuitive and user-friendly. 
+              The streamlined interface allows me to effortlessly navigate through various job listings, saving me precious 
+              time and effort. The search filters and advanced algorithms ensure that I can quickly find relevant positions 
+              tailored to my skills and preferences.
+            </p>
+          </div>
+        <img src="./images/SirDom.png" alt="Sir Dom" style="width: 400px; height: 350px;" class=".d-sm-none .d-md-block">
+        </div>
+
+    
+    </div>
+
+    <!-- Create an Account Page-->
+      <div id="createAccount" class="d-none container card col-lg-4 mt-5">
+       <h1 class="mb-5 text-center text-primary">Create an Account</h1>
+        <form action="#" id="">
+          <div class="mb-3 row text-danger">
+            <label for="inputUserName" class="col-sm-4 col-form-label text-primary">
+            <h4>Username:</h4></label>
+            <div class="col-sm-8">
+              <input type="text" class="form-control" id="inputUserName" required>
+            </div>
+          <label for="inputEmail" class="col-sm-4 col-form-label text-primary"><h4>Email:</h4></label>
+          <div class="col-sm-8">
+            <input type="email" class="form-control" id="inputEmail" required>
+          </div>
+          <label for="inputEmail" class="col-sm-4 col-form-label"><h6>Confirm Email:</h6></label>
+          <div class="col-sm-8 mb-3">
+            <input type="email" class="form-control" id="inputEmail" required>
+          </div>
+
+          <!--PassWord-->
+          <label for="inputPassword" class="col-sm-4 col-form-label text-primary"><h4>Password:</h4></label>
+          <div class="col-sm-8">
+            <input type="password" class="form-control" id="inputPassword" required>
+          </div>
+          <label for="inputPassword" class="col-sm-4 col-form-label"><h6>Confirm Password:</h6></label>
+          <div class="col-sm-8 mb-3">
+            <input type="password" class="form-control" id="inputPassword" required>
+          </div>
+
+          <div class="d-flex justify-content-center">
+          <button type="submit" class="btn btn-outline-primary w-25 mb-3 text-center ">Register</button>
+          </div>
+        </div>
+        </form>
+        
+      </div>
+       
+
+    </div>
+
+    <footer>
+      <div class="card">
+        Footer
+        <br><br><br><br><br><br><br><br><br><br><br>
+      </div>
+      
+      </footer>
+  </main>
+  
+  <script src="./js/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
