@@ -71,11 +71,6 @@
   showSelectedPage('applyJob');
 }
 
- const navigateToCompanies = () => {
-   history.pushState({ id: 'companies' }, 'Companies', './index.html#companies');
-   showSelectedPage('companies');
- }
-
  const navigateToTestimonial = () => {
    history.pushState({ id: 'testimonial' }, 'Testimonial', './index.html#testimonial');
    showSelectedPage('testimonial');
@@ -92,7 +87,7 @@
    showSelectedPage(e.state.id);
  });
 
- const pages = ['home', 'about', 'jobs','applyJob', 'companies', 'testimonial','createAccount'];
+ const pages = ['home', 'about', 'jobs','applyJob', 'testimonial','createAccount'];
 
  history.replaceState({ id: 'home' }, 'Home', './index.html');
 
