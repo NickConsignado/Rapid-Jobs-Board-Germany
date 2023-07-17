@@ -110,12 +110,12 @@
    const cardDiv = document.createElement('div');
    cardDiv.innerHTML = `
      <div class="container border d-flex row w-lg-50 mb-5 m-auto">
-       <div class="ms-2 col-lg-4 my-2">
-       <dd>${job.title},</dd>
+       <div class="col-lg-4 my-2">
+       <dd  class="text-primary">${job.title},</dd>
        <dd><i class="fa-solid fa-building me-2" style="color: #3A43C9;"></i>${job.company_name},</dd>
        <dd><i class="fa-solid fa-earth-americas me-2" style="color: #3A43C9;"></i>${job.location}</dd>
        </div>
-       <div class="ms-4 col-lg-6 my-2">
+       <div class="col-lg-6 my-2">
          <dd>${job.tags}</dd>
        </div>
        <div class="col-lg-1  align-self-center">
@@ -134,13 +134,13 @@
 
  jobs.forEach(job => {
   const jobDes = document.createElement('div');
-     jobDes.innerHTML = `<div class="container border d-flex row w-lg-50 mb-5 m-auto">
-     <div class="ms-2 col-lg-4 my-2">
-     <dd>${job.title},</dd>
+     jobDes.innerHTML = `<div class="border d-flex row mb-5">
+     <div class="col-lg-4 my-2">
+     <dd class="text-primary">${job.title},</dd>
      <dd><i class="fa-solid fa-building me-2" style="color: #3A43C9;"></i>${job.company_name},</dd>
      <dd><i class="fa-solid fa-earth-americas me-2" style="color: #3A43C9;"></i>${job.location}</dd>
      </div>
-     <div class="ms-4 col-lg-6 my-2">
+     <div class="col-lg-6 my-2">
       <dd>${job.tags}</dd>
      </div>
      <div>
