@@ -5,6 +5,7 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Offcanvas from 'react-bootstrap/Offcanvas';
+import { Link } from "react-router-dom"
 
 function offcanvas() {
   return (
@@ -26,10 +27,16 @@ function offcanvas() {
               </Offcanvas.Header>
               <Offcanvas.Body>
                 <Nav className=" flex-grow-1 pe-3 mt-lg-3 ">
-                  <Nav.Link href="./">Home</Nav.Link>
+                  {/* <Nav.Link href="./">Home</Nav.Link>
                   <Nav.Link href="/about">About</Nav.Link>
                   <Nav.Link href="/Jobs">Jobs</Nav.Link>
-                  <Nav.Link href="/Testimonial">Testimonial</Nav.Link>
+                  <Nav.Link href="/Testimonial">Testimonial</Nav.Link>  */}
+                  <ul className="d-flex justify-content-between">
+                  <Nav><li><Link to="./">Home</Link></li></Nav>
+                  <Nav><li><Link to="/about">About</Link></li></Nav>
+                  <Nav><li><Link to="Jobs">Jobs</Link></li></Nav>
+                  <Nav><li><Link to="/Testimonial">Testimonial</Link></li></Nav>
+                  </ul>
                   <Container>
                   <Form className="d-flex col-lg-3" role="search">
                     <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>

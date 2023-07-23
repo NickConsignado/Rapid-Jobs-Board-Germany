@@ -7,10 +7,10 @@ function Testimonial() {
       }, [])
     return (
     <>
-    <div id="testimonial" className="container-fluid w-75 mt-3 m-auto">
+    <div id="testimonial" className="container-fluid col-lg-7 mt-3 m-auto">
        <h1>Testimonial</h1>
         <div className="d-flex row mt-5">
-        <img src={SirJay} alt="Sir Jay " style={{width: "400px", height: "350px"}} />
+        <img src={SirJay} alt="Sir Jay " style={{width: "400px", height: "350px",}} />
           <div className="col-lg-5 text-center">
             <h1 className=" mt-3">"Jay"</h1>
             <p>From the very beginning, Jay showcased a deep understanding of our 
