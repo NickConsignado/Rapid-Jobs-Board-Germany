@@ -1,10 +1,10 @@
 import { useDispatch } from "react-redux";
 import { addProductToCart } from "../store/cartReducer";
 import { Link } from "react-router-dom";
-import mainLogo from'../images/final-logo.png';
+
 
 function JobList(props) {
-  const { title,id, tags,location, company, description,jobType} = props
+  const { title,id, tags,location, company, description} = props
   const dispatch = useDispatch()
 
   function handleClick(){
@@ -16,8 +16,7 @@ function JobList(props) {
         company,
         location,
         tags,
-        description,
-        jobType
+        description
     }
     ))
 
@@ -35,7 +34,6 @@ function JobList(props) {
        </div>
        <div className="col-lg-6 my-2">
          <dd>{tags}</dd>
-         <dd>{jobType}</dd>
        </div>
        <div className="col-lg-1  align-self-center">
        <Link to="/JobDes"><span className="btn btn-outline-primary" onClick={handleClick}>Apply</span></Link>

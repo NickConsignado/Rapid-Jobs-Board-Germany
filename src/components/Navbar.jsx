@@ -6,7 +6,6 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 
-
 function offcanvas() {
   return (
 <>
@@ -26,7 +25,7 @@ function offcanvas() {
                 </Offcanvas.Title>
               </Offcanvas.Header>
               <Offcanvas.Body>
-                <Nav className=" flex-grow-1 pe-3 mt-lg-3  ">
+                <Nav className=" flex-grow-1 pe-3 mt-lg-3 ">
                   <Nav.Link href="./">Home</Nav.Link>
                   <Nav.Link href="/about">About</Nav.Link>
                   <Nav.Link href="/Jobs">Jobs</Nav.Link>

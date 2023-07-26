@@ -34,7 +34,6 @@ function Jobs() {
               description={job.description}
               location={job.location}
               tags={job.tags}
-              jobType={job.job_types}
               
             />  
           )
