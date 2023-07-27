@@ -9,6 +9,7 @@ import Footer from "./components/Footer"
 import { Provider } from "react-redux"
 import  {store} from "./store/store"
 import Tags from "./components/Tags"
+import NotFound from "./pages/NotFound"
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
         } />
           <Route path="/JobDes" element={<Tags />}/>
           <Route path="/Testimonial" element={<Testimonial />} />
+          <Route path="*" element={<NotFound/>}/>
         </Routes>
 
         <Footer />
