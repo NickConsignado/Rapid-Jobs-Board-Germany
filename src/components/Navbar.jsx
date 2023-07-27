@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import mainLogo from "../images/final-logo.png";
 
-function offcanvas() {
+function Navbar() {
   return (
     <>
       <header>
@@ -67,7 +67,7 @@ function offcanvas() {
                 </li>
               </ul>
               <div className="container me-lg-0 col-lg-3">
-                <div id="login-form" className="d-flex ">
+                <div id="login-form" className="d-flex  ">
                   <h5>Login:</h5>
                   <input
                     className="form-control me-2 ms-2"
@@ -90,28 +90,11 @@ function offcanvas() {
                     className="btn btn-outline-primary"
                     type="submit"
                   >
-                    Sign up
+                    SignUp
                   </button>
                 </div>
-
-                <div id="logged-in" className="d-none">
-                  <h3>
-                    User: &nbsp;
-                    <span id="logged-in-user" className="me-5"></span>
-                  </h3>
-                  <button
-                    onClick="logout()"
-                    className="btn btn-outline-primary ms-5"
-                    type="submit"
-                  >
-                    Logout
-                  </button>
-                </div>
-
                 <span
-                  className="d-flex justify-content-center mt-2 text-primary"
-                  id="c-Account"
-                >
+                  className="d-flex justify-content-center mt-2 text-primary">
                   Create Account?
                 </span>
               </div>
@@ -123,4 +106,4 @@ function offcanvas() {
   );
 }
 
-export default offcanvas;
+export default Navbar;
