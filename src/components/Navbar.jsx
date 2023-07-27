@@ -5,7 +5,7 @@ function Navbar() {
   return (
     <>
       <header>
-        <nav className="navbar navbar-expand-lg bg-light">
+        <nav className="navbar navbar-expand-lg bg-light" >
           <div className="container-fluid">
             <p className="navbar-brand">
               <img
@@ -31,24 +31,24 @@ function Navbar() {
             >
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                 <li className="nav-item">
-                  <NavLink to="./">
+                  <NavLink to="./" style={{textDecoration: "none"}}>
                     <span className="nav-link" aria-current="page">
                       Home
                     </span>
                   </NavLink>
                 </li>
                 <li className="nav-item">
-                  <NavLink to="/about">
+                  <NavLink to="/about" style={{textDecoration: "none"}}>
                     <span className="nav-link">About</span>
                   </NavLink>
                 </li>
                 <li className="nav-item">
-                  <NavLink to="/Jobs">
+                  <NavLink to="/Jobs" style={{textDecoration: "none"}}>
                     <span className="nav-link">Jobs</span>
                   </NavLink>
                 </li>
                 <li className="nav-item">
-                  <NavLink to="/Testimonial">
+                  <NavLink to="/Testimonial" style={{textDecoration: "none"}}>
                     <span className="nav-link">Testimonial</span>
                   </NavLink>
                 </li>
