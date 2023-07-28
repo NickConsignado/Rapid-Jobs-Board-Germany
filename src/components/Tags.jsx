@@ -9,7 +9,7 @@ function Tags (){
     return(
         <>
          <h3>Job Description</h3>
-         <Link to="/Jobs"><button className="btn btn-danger m-3 ">Go back</button></Link>
+         <Link to="/Jobs"><button className="btn btn-danger m-3 " onClick={event =>  window.location.href="/Jobs"}>Go back</button></Link>
         <div  className="border shadow m-lg-3 ms-lg-5 mt-5">
             {
             cart.map(

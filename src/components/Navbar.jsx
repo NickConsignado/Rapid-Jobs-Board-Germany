@@ -95,7 +95,7 @@ function Navbar() {
                 </div>
                 <span
                   className="d-flex justify-content-center mt-2 text-primary">
-                  Create Account?
+                  <a href="#" style={{textDecoration: "none"}}>Create Account?</a>
                 </span>
               </div>
             </div>
